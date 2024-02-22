@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { getAllTodos } from '../services/TodoService';
 
 const ListTodoComponent = props => {
-    const dummyData = [{
-        "id":1,
-        "title":"learn",
-        "description":"desc",
-        "complete": false
-    },
-    {
-        "id":2,
-        "title":"learn222",
-        "description":"desc222",
-        "complete": false
-    }]
 
-    const [todo, setTodos] = useState(dummyData)
+    const [todo, setTodos] = useState([])
+    useEffect(() => {
+        listTodos();
+    }, [])
+
+    function listTodos() {
+        getAllTodos().then((response) => {
+            setTodos(response.data);
+        }).catch(error => {
+            console.error(error);
+        })
+    }
     return (
         <div className='container'>
             <h2 className='text-center'>List of Todos</h2>
