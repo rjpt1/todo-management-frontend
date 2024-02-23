@@ -6,6 +6,7 @@ import ListTodoComponent from './component/ListTodoComponent';
 import HeaderComponent from './component/HeaderComponent';
 import FooterComponent from './component/FooterComponent';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import TodoComponent from './component/TodoComponent';
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
           <Route path='/' element={<ListTodoComponent></ListTodoComponent>}></Route>
           {/* http://localhost:8080/todos*/}
           <Route path='/todos' element = { <ListTodoComponent></ListTodoComponent>}></Route>
+          {/* http://localhost:8080/add-todo*/}
+          <Route path='/add-todo' element = { <TodoComponent></TodoComponent> }></Route>
         </Routes>
         <FooterComponent></FooterComponent>
       </BrowserRouter>
