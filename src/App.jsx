@@ -17,12 +17,14 @@ function App() {
       <BrowserRouter>
         <HeaderComponent></HeaderComponent>
         <Routes>
-          {/* http://localhost:8080*/}
+          {/* http://localhost:8080 */}
           <Route path='/' element={<ListTodoComponent></ListTodoComponent>}></Route>
-          {/* http://localhost:8080/todos*/}
+          {/* http://localhost:8080/todos */}
           <Route path='/todos' element = { <ListTodoComponent></ListTodoComponent>}></Route>
-          {/* http://localhost:8080/add-todo*/}
+          {/* http://localhost:8080/add-todo */}
           <Route path='/add-todo' element = { <TodoComponent></TodoComponent> }></Route>
+          {/* http://localhost:8080/update-todo/1 */ }
+          <Route path='/update-todo/:id' element={<TodoComponent></TodoComponent>}></Route>
         </Routes>
         <FooterComponent></FooterComponent>
       </BrowserRouter>
