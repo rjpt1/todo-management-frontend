@@ -7,6 +7,8 @@ import HeaderComponent from './component/HeaderComponent';
 import FooterComponent from './component/FooterComponent';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import TodoComponent from './component/TodoComponent';
+import RegisterComponent from './component/RegisterComponent';
+import LoginComponent from './component/LoginComponent';
 
 
 function App() {
@@ -25,6 +27,11 @@ function App() {
           <Route path='/add-todo' element = { <TodoComponent></TodoComponent> }></Route>
           {/* http://localhost:8080/update-todo/1 */ }
           <Route path='/update-todo/:id' element={<TodoComponent></TodoComponent>}></Route>
+
+          {/* http://localhost:8080/register */ }
+          <Route path='/register' element={<RegisterComponent></RegisterComponent>}></Route>
+          {/* http://localhost:8080/login */ }
+          <Route path='/login' element={<LoginComponent></LoginComponent>}></Route>
         </Routes>
         <FooterComponent></FooterComponent>
       </BrowserRouter>
